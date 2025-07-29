@@ -13,9 +13,9 @@ runs:
       if: inputs.language == 'java'
       uses: libbyf/github-actions-poc/.github/actions/services/testers/java@main
       with:
-        source: inputs.source
+        source: ${{ inputs.source }}
     - name: Test Python Micro-Service
       if: inputs.language == 'python'
       uses: libbyf/github-actions-poc/.github/actions/services/testers/python@main
       with:
-        source: inputs.source
+        source: ${{ inputs.source }}

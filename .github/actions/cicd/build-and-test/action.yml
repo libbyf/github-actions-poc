@@ -18,13 +18,13 @@ runs:
     - name: Build
       uses: libbyf/github-actions-poc/.github/actions/cicd/build@main
       with:
-        component_type: inputs.component_type
-        language: inputs.language
-        version: inputs.version
-        source: inputs.source
-    - name: Test Micro-Service
+        component_type: ${{ inputs.component_type }}
+        language: ${{ inputs.language }}
+        version: ${{ inputs.version }}
+        source: ${{ inputs.source }}
+    - name: Test Micro-Service }}
       if: inputs.component_type == 'micro-service'
       uses: libbyf/github-actions-poc/.github/actions/cicd/components/micro-service/test@main
       with:
-        language: inputs.language
-        source: inputs.source
+        language: ${{ inputs.language }}
+        source: ${{ inputs.source }}

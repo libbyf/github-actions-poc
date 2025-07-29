@@ -6,9 +6,6 @@ inputs:
   language:
     description: "language"
     required: true
-  version:
-    description: "version"
-    required: true
   source:
     description: "source"
     default: "."
@@ -19,5 +16,5 @@ runs:
       if: inputs.component_type == 'micro-services'
       uses: libbyf/github-actions-poc/.github/actions/cicd/components/micro-service/test@main
       with:
-        language: inputs.language
-        source: inputs.source
+        language: ${{ inputs.language }}
+        source: ${{ inputs.source }}
