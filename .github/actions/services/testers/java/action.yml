@@ -1,0 +1,12 @@
+name: "Tester - Java"
+inputs:
+  source:
+    description: "source"
+    default: "."
+runs:
+  using: "composite"
+  steps:
+    - name: Test with Gradle
+      shell: bash
+      working-directory: ${{ inputs.source }}
+      run: ./gradlew test --no-daemon

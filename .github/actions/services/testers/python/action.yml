@@ -1,0 +1,14 @@
+name: "Tester - Python"
+inputs:
+  source:
+    description: "source"
+    default: "."
+runs:
+  using: "composite"
+  steps:
+    - name: Test with pytest
+      shell: bash
+      working-directory: ${{ inputs.source }}
+      env:
+        PYTHONPATH: ${{ inputs.source }}
+      run: pytest -m test

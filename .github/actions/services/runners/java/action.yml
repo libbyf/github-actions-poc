@@ -1,0 +1,25 @@
+name: "Runner - Java"
+inputs:
+  version:
+    description: "version"
+    required: true
+  source:
+    description: "source"
+    default: "."
+runs:
+  using: "composite"
+  steps:
+    - name: Set up JDK
+      uses: actions/setup-java@v4
+      with:
+        java-version: ${{ inputs.version }}
+        distribution: 'temurin'
+
+    - name: Make gradlew executable
+      shell: bash
+      run: chmod +x ${{ inputs.source }}/gradlew
+
+    - name: Build with Gradle
+      shell: bash
+      working-directory: ${{ inputs.source }}
+      run: ./gradlew build --no-daemon

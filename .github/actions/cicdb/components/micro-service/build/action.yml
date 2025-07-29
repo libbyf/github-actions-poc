@@ -1,0 +1,26 @@
+name: "Micro-Services - Build"
+inputs:
+  language:
+    description: "language"
+    required: true
+  version:
+    description: "version"
+    required: true
+  source:
+    description: "source"
+    default: "."
+runs:
+  using: "composite"
+  steps:
+    - name: Build Java Micro-Service
+      if: inputs.language == 'java'
+      uses: ./.github/actions/services/runners/java
+      with:
+        version: inputs.version
+        source: inputs.source
+    - name: Build Python Micro-Service
+      if: inputs.language == 'python'
+      uses: ./.github/actions/services/runners/python
+      with:
+        version: inputs.version
+        source: inputs.source
