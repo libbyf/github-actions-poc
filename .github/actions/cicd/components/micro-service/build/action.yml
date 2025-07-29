@@ -14,13 +14,13 @@ runs:
   steps:
     - name: Build Java Micro-Service
       if: inputs.language == 'java'
-      uses: libbyf/github-actions-poc/.github/actions/services/runners/java
+      uses: libbyf/github-actions-poc/.github/actions/services/runners/java@main
       with:
         version: inputs.version
         source: inputs.source
     - name: Build Python Micro-Service
       if: inputs.language == 'python'
-      uses: libbyf/github-actions-poc/.github/actions/services/runners/python
+      uses: libbyf/github-actions-poc/.github/actions/services/runners/python@main
       with:
         version: inputs.version
         source: inputs.source

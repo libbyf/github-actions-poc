@@ -17,7 +17,7 @@ runs:
   steps:
     - name: Test Micro-Service
       if: inputs.component_type == 'micro-services'
-      uses: libbyf/github-actions-poc/.github/actions/cicd/components/micro-service/test
+      uses: libbyf/github-actions-poc/.github/actions/cicd/components/micro-service/test@main
       with:
         language: inputs.language
         source: inputs.source
