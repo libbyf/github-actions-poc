@@ -1,0 +1,31 @@
+name: "CICD - Build"
+inputs:
+  component_type:
+    description: "OpsLevel component_type"
+    required: true
+  language:
+    description: "language"
+    required: true
+  version:
+    description: "version"
+    required: true
+  source:
+    description: "source"
+    default: "."
+runs:
+  using: "composite"
+  steps:
+    - name: Build
+      uses: ./.github/actions/cicd/build
+      with:
+        component_type: inputs.component_type
+        language: inputs.language
+        version: inputs.version
+        source: inputs.source
+    - name: Test Micro-Service
+      if: inputs.component_type == 'micro-services'
+      uses: ./.github/actions/cicd/components/micro-service/test
+      with:
+        language: inputs.language
+        version: inputs.version
+        source: inputs.source

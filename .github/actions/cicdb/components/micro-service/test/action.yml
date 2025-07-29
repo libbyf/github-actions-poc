@@ -1,11 +1,5 @@
 name: "Micro-Services - Test"
 inputs:
-  language:
-    description: "language"
-    required: true
-  version:
-    description: "version"
-    required: true
   source:
     description: "source"
     default: "."
@@ -16,11 +10,9 @@ runs:
       if: inputs.language == 'java'
       uses: ./.github/actions/services/testers/java
       with:
-        version: inputs.version
         source: inputs.source
     - name: Test Python Micro-Service
       if: inputs.language == 'python'
       uses: ./.github/actions/services/testers/python
       with:
-        version: inputs.version
         source: inputs.source
