@@ -17,7 +17,7 @@ runs:
   steps:
     - name: Build Micro-Service
       if: inputs.component_type == 'micro-services'
-      uses: .github/actions/cicd/components/micro-service/build
+      uses: ./.github/actions/cicd/components/micro-service/build
       with:
         language: inputs.language
         version: inputs.version
