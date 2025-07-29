@@ -1,5 +1,8 @@
 name: "Micro-Services - Test"
 inputs:
+  language:
+    description: "language"
+    required: true
   source:
     description: "source"
     default: "."

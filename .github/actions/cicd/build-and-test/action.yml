@@ -27,5 +27,4 @@ runs:
       uses: ./.github/actions/cicd/components/micro-service/test
       with:
         language: inputs.language
-        version: inputs.version
         source: inputs.source
