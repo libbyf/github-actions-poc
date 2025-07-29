@@ -16,7 +16,7 @@ runs:
   using: "composite"
   steps:
     - name: Build
-      uses: libbyf/github-actions-poc/.github/actions/cicd/build@main
+      uses: ./.github/actions/cicd/build
       with:
         component_type: inputs.component_type
         language: inputs.language
@@ -24,7 +24,7 @@ runs:
         source: inputs.source
     - name: Test Micro-Service
       if: inputs.component_type == 'micro-services'
-      uses: libbyf/github-actions-poc/.github/actions/cicd/components/micro-service/test@main
+      uses: ./.github/actions/cicd/components/micro-service/test
       with:
         language: inputs.language
         source: inputs.source
