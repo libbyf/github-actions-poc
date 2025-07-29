@@ -1,4 +1,4 @@
-name: "CICD - Build"
+name: "CICD - Build And Test"
 inputs:
   component_type:
     description: "OpsLevel component_type"
