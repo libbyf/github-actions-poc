@@ -11,11 +11,11 @@ runs:
   steps:
     - name: Test Java Micro-Service
       if: inputs.language == 'java'
-      uses: ./.github/actions/services/testers/java
+      uses: libbyf/github-actions-poc/.github/actions/services/testers/java
       with:
         source: inputs.source
     - name: Test Python Micro-Service
       if: inputs.language == 'python'
-      uses: ./.github/actions/services/testers/python
+      uses: libbyf/github-actions-poc/.github/actions/services/testers/python
       with:
         source: inputs.source
